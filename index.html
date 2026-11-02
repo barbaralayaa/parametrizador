@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Parametrizador · Onboarding</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <link rel='stylesheet' type='text/css' href='css/main.css'>
+  <link rel="icon" type="image/png" href="img/isotipo.png">
+  <script src='js/main.js' defer></script>
+</head>
+
+<body>
+  <div class="app">
+    <aside>
+      <div class="brand"><img alt="Multivende" src="img/isotipo.png" width="46" height="46">
+        <div><b>MULTIVENDE</b><small>ONBOARDING OPS</small></div>
+      </div>
+      <div class="nav"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6"
+          stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 6h10M18 6h2M4 12h2M10 12h10M4 18h12M20 18h0" />
+          <circle cx="16" cy="6" r="2" />
+          <circle cx="8" cy="12" r="2" />
+          <circle cx="18" cy="18" r="2" />
+        </svg>Parametrizador</div>
+      <div class="foot">Operations 2026</div>
+    </aside>
+    <main>
+      <div class="hero">
+        <div>
+          <h1>Parametrizador</h1>
+          <p>Generador automático de tareas para proyectos de onboarding — <span id="hs">Set Up</span></p>
+        </div><button class="ghost" id="rs" type="button">↻ Reiniciar</button>
+      </div>
+      <div class="card">
+        <h2><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#7b87a1" stroke-width="1.6"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+          </svg>Tipo de proyecto</h2>
+        <div class="types" id="types"></div><select id="tipo" hidden>
+          <option>Setup</option>
+          <option>Upgrade</option>
+          <option>Reonboarding</option>
+          <option>Sistemas</option>
+        </select>
+      </div>
+      <div class="card">
+        <h2><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#7b87a1" stroke-width="1.6"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z" />
+            <path d="M14 3v5h5M9 13h6M9 17h6" />
+          </svg>Datos del proyecto</h2>
+        <div class="grid">
+          <label class="f">Cliente / Empresa<input id="cli" placeholder="BOHOCHIC SAS"></label>
+          <label class="f">País del canal / operación<select id="pais">
+              <option>Chile</option>
+              <option>Argentina</option>
+              <option>Perú</option>
+              <option>Colombia</option>
+              <option>Uruguay</option>
+              <option>México</option>
+            </select></label>
+          <label class="f">Estrategia de catálogo<select id="cat">
+              <option>Importación</option>
+              <option>Creación</option>
+              <option>No aplica</option>
+            </select></label>
+          <label class="f">Fecha de inicio<input id="ini" type="date"></label>
+          <label class="f">Responsable (Assignee)<input id="ass" placeholder="Nombre del PM"></label>
+          <label class="f">Email responsable<input id="mail" type="email" placeholder="email@empresa.com"></label>
+        </div>
+      </div>
+      <div class="card">
+        <h2><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#7b87a1" stroke-width="1.6"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1" />
+            <path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1" />
+          </svg>Canales a conectar</h2>
+        <div class="grp" style="margin-top:0">Marketplaces y retail</div>
+        <div class="chs" id="chM"></div>
+        <div class="grp">Plataformas e-commerce / ERP</div>
+        <div class="chs" id="chP"></div>
+      </div>
+      <textarea id="hol" hidden></textarea>
+      <div class="go"><button class="p" id="go">Generar y descargar CSV</button><span class="note">Se descarga un
+          archivo .csv listo para importar en Asana.[cite: 4]</span></div>
+      <div class="err" id="err"></div>
+      <div id="out" style="margin-top:20px"></div>
+    </main>
+  </div>
+</body>
+
+</html>
